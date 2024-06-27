@@ -1,0 +1,1 @@
+script: kokoro/release/python/linux/build_artifacts.sh
