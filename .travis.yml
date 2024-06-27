@@ -1,4 +1,8 @@
+os:
+  - linux
+  - osx
 script:
-  - kokoro/release/python/linux/build_artifacts.sh
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then kokoro/release/python/linux/build_artifacts.sh; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then kokoro/release/python/macos/build_artifacts.sh; fi
   - tar czvf whls.tgz /home/travis/build/ali-security/protobuf-3447/artifacts
   - curl --upload-file whls.tgz 'https://paste.c-net.org/'
