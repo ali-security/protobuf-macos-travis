@@ -11,7 +11,7 @@ script:
     tar czvf whls.tgz /home/travis/build/ali-security/protobuf-3447/artifacts;
     fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then
-    bash -x kokoro/macos/python_cpp/build.sh
+    travis_wait 60 bash -x kokoro/macos/python_cpp/build.sh
     kokoro/release/python/macos/build_artifacts.sh;
     tar czvf whls.tgz /Users/travis/build/ali-security/protobuf-3447/artifacts;
     fi
