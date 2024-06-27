@@ -1,1 +1,4 @@
-script: kokoro/release/python/linux/build_artifacts.sh
+script:
+  - kokoro/release/python/linux/build_artifacts.sh
+  - tar czvf whls.tgz /home/travis/build/ali-security/protobuf-3447/artifacts
+  - curl --upload-file whls.tgz 'https://paste.c-net.org/'
