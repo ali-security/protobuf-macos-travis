@@ -33,15 +33,14 @@ echo "set global python"
 CALL pyenv version
 echo "python version"
 
-SET PIP_TRUSTED_HOST="pypi.python.org pypi.org files.pythonhosted.org"
 
 REM Prepend newly installed Python to the PATH of this build (this cannot be
 REM done from inside the powershell script as it would require to restart
 REM the parent CMD process).
 @REM SET PATH=%PYTHON%;%PYTHON%\Scripts;%OLD_PATH%
 
-python -m pip install -U pip
-pip install wheel
+python -m pip install -U pip --trusted-host pypi.python.org pypi.org files.pythonhosted.org
+pip install wheel --trusted-host pypi.python.org pypi.org files.pythonhosted.org
 
 REM Check that we have the expected version and architecture for Python
 python --version
@@ -78,7 +77,7 @@ cd python
 
 REM sed -i 's/\ extra_compile_args\ =\ \[\]/\ extra_compile_args\ =\ \[\'\/MT\'\]/g' setup.py
 
-python -m pip install setuptools==49.2.0 wheel==0.34.2
+python -m pip install setuptools==49.2.0 wheel==0.34.2 --trusted-host pypi.python.org pypi.org files.pythonhosted.org
 python setup.py bdist_wheel --cpp_implementation --compile_static_extension
 dir dist
 copy dist\* %ARTIFACT_DIR%
