@@ -28,7 +28,12 @@ REM Prepend newly installed Python to the PATH of this build (this cannot be
 REM done from inside the powershell script as it would require to restart
 REM the parent CMD process).
 SET PATH=%PYTHON%;%PYTHON%\Scripts;%OLD_PATH%
+echo "DEBUGGINGGGG"
 echo %PATH%
+dir "C:\Python35"
+dir "C:\Python35-x64"
+dir "C:\Python35\bin"
+
 python -m pip install -U pip
 pip install wheel
 
