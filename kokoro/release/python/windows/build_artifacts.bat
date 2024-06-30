@@ -40,40 +40,40 @@ SET PYTHON_VERSION=3.5.4-win32
 SET PYTHON_ARCH=32
 CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python35-x64
-SET PYTHON_VERSION=3.5.4
-SET PYTHON_ARCH=64
-CALL build_single_artifact.bat || goto :error
+@REM SET PYTHON=C:\python35-x64
+@REM SET PYTHON_VERSION=3.5.4
+@REM SET PYTHON_ARCH=64
+@REM CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python36
-SET PYTHON_VERSION=3.6.8-win32
-SET PYTHON_ARCH=32
-CALL build_single_artifact.bat || goto :error
+@REM SET PYTHON=C:\python36
+@REM SET PYTHON_VERSION=3.6.8-win32
+@REM SET PYTHON_ARCH=32
+@REM CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python36-x64
-SET PYTHON_VERSION=3.6.8
-SET PYTHON_ARCH=64
-CALL build_single_artifact.bat || goto :error
+@REM SET PYTHON=C:\python36-x64
+@REM SET PYTHON_VERSION=3.6.8
+@REM SET PYTHON_ARCH=64
+@REM CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python37
-SET PYTHON_VERSION=3.7.9-win32
-SET PYTHON_ARCH=32
-CALL build_single_artifact.bat || goto :error
+@REM SET PYTHON=C:\python37
+@REM SET PYTHON_VERSION=3.7.9-win32
+@REM SET PYTHON_ARCH=32
+@REM CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python37-x64
-SET PYTHON_VERSION=3.7.9
-SET PYTHON_ARCH=64
-CALL build_single_artifact.bat || goto :error
+@REM SET PYTHON=C:\python37-x64
+@REM SET PYTHON_VERSION=3.7.9
+@REM SET PYTHON_ARCH=64
+@REM CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python38
-SET PYTHON_VERSION=3.8.10-win32
-SET PYTHON_ARCH=32
-CALL build_single_artifact.bat || goto :error
+@REM SET PYTHON=C:\python38
+@REM SET PYTHON_VERSION=3.8.10-win32
+@REM SET PYTHON_ARCH=32
+@REM CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python38-x64
-SET PYTHON_VERSION=3.8.10
-SET PYTHON_ARCH=64
-CALL build_single_artifact.bat || goto :error
+@REM SET PYTHON=C:\python38-x64
+@REM SET PYTHON_VERSION=3.8.10
+@REM SET PYTHON_ARCH=64
+@REM CALL build_single_artifact.bat || goto :error
 
 goto :EOF
 
