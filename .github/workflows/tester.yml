@@ -7,7 +7,7 @@ on:
 jobs:
   test:
     name: Test
-    runs-on: macos-latest
+    runs-on: macos-12
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -17,7 +17,7 @@ jobs:
           python-version: 3.8
       - name: Install dependencies
         run: |
-          brew install autoconf automake libtool m4
+          brew install autoconf automake libtool m4 gm4 gnum4
       - name: Test
         run: kokoro/macos/python_cpp/build.sh
             

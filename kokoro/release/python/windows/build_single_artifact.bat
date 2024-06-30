@@ -23,9 +23,14 @@ if %PYTHON%==C:\python38 set vcplatform=Win32
 
 if %PYTHON%==C:\python38-x64 set generator=Visual Studio 14 Win64
 if %PYTHON%==C:\python38-x64 set vcplatform=x64
+
+REM set python version
 pyenv install %PYTHON_VERSION%
+echo "installed python"
 pyenv global %PYTHON_VERSION%
+echo "set global python"
 pyenv version
+echo "python version"
 
 REM Prepend newly installed Python to the PATH of this build (this cannot be
 REM done from inside the powershell script as it would require to restart
