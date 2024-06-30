@@ -45,7 +45,7 @@ CALL pip install wheel --index-url "https://:2020-07-20T13:50:22.098859Z@time-ma
 
 REM Check that we have the expected version and architecture for Python
 CALL python --version
-python -c "import struct; print(struct.calcsize('P') * 8)"
+CALL python -c "import struct; print(struct.calcsize('P') * 8)"
 
 rmdir /s/q %REPO_DIR%
 xcopy /s  %REPO_DIR_STAGE% "%REPO_DIR%\"
