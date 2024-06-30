@@ -39,11 +39,11 @@ REM done from inside the powershell script as it would require to restart
 REM the parent CMD process).
 @REM SET PATH=%PYTHON%;%PYTHON%\Scripts;%OLD_PATH%
 
-python -m pip install -U pip --trusted-host pypi.python.org pypi.org files.pythonhosted.org
-pip install wheel --trusted-host pypi.python.org pypi.org files.pythonhosted.org
+CALL python -m pip install -U pip --trusted-host pypi.python.org pypi.org files.pythonhosted.org
+CALL pip install wheel --trusted-host pypi.python.org pypi.org files.pythonhosted.org
 
 REM Check that we have the expected version and architecture for Python
-python --version
+CALL python --version
 python -c "import struct; print(struct.calcsize('P') * 8)"
 
 rmdir /s/q %REPO_DIR%
@@ -60,8 +60,8 @@ mkdir src\.libs
 
 mkdir vcprojects
 pushd vcprojects
-cmake -G "%generator%" -Dprotobuf_BUILD_SHARED_LIBS=%BUILD_DLL% -Dprotobuf_UNICODE=%UNICODE% -Dprotobuf_BUILD_TESTS=OFF ../cmake || goto :error
-msbuild protobuf.sln /p:Platform=%vcplatform% /p:Configuration=Release || goto :error
+CALL cmake -G "%generator%" -Dprotobuf_BUILD_SHARED_LIBS=%BUILD_DLL% -Dprotobuf_UNICODE=%UNICODE% -Dprotobuf_BUILD_TESTS=OFF ../cmake || goto :error
+CALL msbuild protobuf.sln /p:Platform=%vcplatform% /p:Configuration=Release || goto :error
 dir /s /b
 popd
 copy vcprojects\Release\libprotobuf.lib src\.libs\libprotobuf.a
@@ -77,8 +77,8 @@ cd python
 
 REM sed -i 's/\ extra_compile_args\ =\ \[\]/\ extra_compile_args\ =\ \[\'\/MT\'\]/g' setup.py
 
-python -m pip install setuptools==49.2.0 wheel==0.34.2 --trusted-host pypi.python.org pypi.org files.pythonhosted.org
-python setup.py bdist_wheel --cpp_implementation --compile_static_extension
+CALL python -m pip install setuptools==49.2.0 wheel==0.34.2 --trusted-host pypi.python.org pypi.org files.pythonhosted.org
+CALL python setup.py bdist_wheel --cpp_implementation --compile_static_extension
 dir dist
 copy dist\* %ARTIFACT_DIR%
 dir %ARTIFACT_DIR%
