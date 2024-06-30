@@ -41,6 +41,7 @@ before_build:
   - if %platform%==Win64 set vcplatform=x64
 
 build_script:
+  - ps: Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
   - CALL kokoro/release/python/windows/build_artifacts.bat
 
 skip_commits:

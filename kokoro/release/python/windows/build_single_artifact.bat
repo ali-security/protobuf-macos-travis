@@ -23,17 +23,14 @@ if %PYTHON%==C:\python38 set vcplatform=Win32
 
 if %PYTHON%==C:\python38-x64 set generator=Visual Studio 14 Win64
 if %PYTHON%==C:\python38-x64 set vcplatform=x64
+pyenv install %PYTHON_VERSION%
+pyenv global %PYTHON_VERSION%
+pyenv version
 
 REM Prepend newly installed Python to the PATH of this build (this cannot be
 REM done from inside the powershell script as it would require to restart
 REM the parent CMD process).
-SET PATH=%PYTHON%;%PYTHON%\Scripts;%OLD_PATH%
-echo "DEBUGGINGGGG"
-echo %PATH%
-dir C:\
-dir "C:\Python35"
-dir "C:\Python35-x64"
-dir "C:\Python35\bin"
+@REM SET PATH=%PYTHON%;%PYTHON%\Scripts;%OLD_PATH%
 
 python -m pip install -U pip
 pip install wheel
