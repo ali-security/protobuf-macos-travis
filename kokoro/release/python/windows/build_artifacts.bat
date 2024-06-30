@@ -1,3 +1,4 @@
+@echo on
 REM Move scripts to root
 set REPO_DIR_STAGE=%cd%\github\protobuf-stage
 xcopy /S  github\protobuf "%REPO_DIR_STAGE%\"

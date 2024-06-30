@@ -1,3 +1,4 @@
+@echo on
 setlocal
 
 if %PYTHON%==C:\python35 set generator=Visual Studio 14
