@@ -46,3 +46,7 @@ build_script:
 
 skip_commits:
   message: /.*\[skip appveyor\].*/
+
+artifacts:
+  - path: '**\*.whl'
+    name: artifacts
