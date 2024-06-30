@@ -25,6 +25,7 @@ if %PYTHON%==C:\python38-x64 set generator=Visual Studio 14 Win64
 if %PYTHON%==C:\python38-x64 set vcplatform=x64
 
 REM set python version
+echo %PYTHON_VERSION%
 pyenv install %PYTHON_VERSION%
 echo "installed python"
 pyenv global %PYTHON_VERSION%
