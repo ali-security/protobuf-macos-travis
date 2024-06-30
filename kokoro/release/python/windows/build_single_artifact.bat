@@ -66,6 +66,7 @@ cd python
 
 REM sed -i 's/\ extra_compile_args\ =\ \[\]/\ extra_compile_args\ =\ \[\'\/MT\'\]/g' setup.py
 
+python -m pip install setuptools==49.2.0 wheel==0.34.2
 python setup.py bdist_wheel --cpp_implementation --compile_static_extension
 dir dist
 copy dist\* %ARTIFACT_DIR%
