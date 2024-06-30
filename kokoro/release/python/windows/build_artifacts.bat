@@ -32,42 +32,42 @@ mkdir %ARTIFACT_DIR%
 
 REM Build wheel
 
-SET PYTHON=C:\python35_32bit
-SET PYTHON_VERSION=3.5
-SET PYTHON_ARCH=32
-CALL build_single_artifact.bat || goto :error
-
 SET PYTHON=C:\python35
 SET PYTHON_VERSION=3.5
-SET PYTHON_ARCH=64
+SET PYTHON_ARCH=32
 CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python36_32bit
-SET PYTHON_VERSION=3.6
-SET PYTHON_ARCH=32
+SET PYTHON=C:\python35-x64
+SET PYTHON_VERSION=3.5
+SET PYTHON_ARCH=64
 CALL build_single_artifact.bat || goto :error
 
 SET PYTHON=C:\python36
 SET PYTHON_VERSION=3.6
-SET PYTHON_ARCH=64
+SET PYTHON_ARCH=32
 CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python37_32bit
-SET PYTHON_VERSION=3.7
-SET PYTHON_ARCH=32
+SET PYTHON=C:\python36-x64
+SET PYTHON_VERSION=3.6
+SET PYTHON_ARCH=64
 CALL build_single_artifact.bat || goto :error
 
 SET PYTHON=C:\python37
 SET PYTHON_VERSION=3.7
+SET PYTHON_ARCH=32
+CALL build_single_artifact.bat || goto :error
+
+SET PYTHON=C:\python37-x64
+SET PYTHON_VERSION=3.7
 SET PYTHON_ARCH=64
 CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python38_32bit
+SET PYTHON=C:\python38
 SET PYTHON_VERSION=3.8
 SET PYTHON_ARCH=32
 CALL build_single_artifact.bat || goto :error
 
-SET PYTHON=C:\python38
+SET PYTHON=C:\python38-x64
 SET PYTHON_VERSION=3.8
 SET PYTHON_ARCH=64
 CALL build_single_artifact.bat || goto :error

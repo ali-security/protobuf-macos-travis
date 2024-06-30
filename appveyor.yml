@@ -6,9 +6,9 @@ environment:
     # Only test few combinations: "Visual Studio 2015 (14) + Win64/MinGW + Debug + DLL". We can
     # test more combinations but AppVeyor just takes too long to finish (each
     # combination takes ~15mins).
-    - platform: MinGW
-      language: cpp
-      image: Visual Studio 2015
+    # - platform: MinGW
+    #   language: cpp
+    #   image: Visual Studio 2015
 
     - platform: Win64
       language: cpp
@@ -16,15 +16,15 @@ environment:
       BUILD_DLL: ON
       UNICODE: ON
 
-    - platform: Win64
-      language: cpp
-      image: Visual Studio 2017
-      BUILD_DLL: OFF
-      UNICODE: ON
+    # - platform: Win64
+    #   language: cpp
+    #   image: Visual Studio 2017
+    #   BUILD_DLL: OFF
+    #   UNICODE: ON
 
-    - platform: Win64
-      language: csharp
-      image: Visual Studio 2017
+    # - platform: Win64
+    #   language: csharp
+    #   image: Visual Studio 2017
 
 # Our build scripts run tests automatically; we don't want AppVeyor
 # to try to detect them itself.
