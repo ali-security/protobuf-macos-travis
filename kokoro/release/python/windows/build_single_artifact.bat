@@ -33,6 +33,8 @@ echo "set global python"
 CALL pyenv version
 echo "python version"
 
+SET PIP_TRUSTED_HOST="pypi.python.org pypi.org files.pythonhosted.org"
+
 REM Prepend newly installed Python to the PATH of this build (this cannot be
 REM done from inside the powershell script as it would require to restart
 REM the parent CMD process).
