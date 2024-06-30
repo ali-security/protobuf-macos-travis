@@ -31,6 +31,8 @@ SET ARTIFACT_DIR=%cd%\artifacts
 mkdir %ARTIFACT_DIR%
 
 REM Build wheel
+REM add pyenv to path
+SET PATH=C:\Users\appveyor\.pyenv\pyenv-win\bin;C:\Users\appveyor\.pyenv\pyenv-win\shims;%PATH%
 
 SET PYTHON=C:\python35
 SET PYTHON_VERSION=3.5.4-win32
