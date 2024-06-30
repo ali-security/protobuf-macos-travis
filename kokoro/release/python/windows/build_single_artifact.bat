@@ -85,6 +85,7 @@ copy dist\* %ARTIFACT_DIR%
 dir %ARTIFACT_DIR%
 cd ..\..
 
+del /s /q CMakeCache.txt
 goto :EOF
 
 :error
