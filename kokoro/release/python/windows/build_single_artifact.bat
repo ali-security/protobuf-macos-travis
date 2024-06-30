@@ -39,8 +39,8 @@ REM done from inside the powershell script as it would require to restart
 REM the parent CMD process).
 @REM SET PATH=%PYTHON%;%PYTHON%\Scripts;%OLD_PATH%
 
-CALL python -m pip install -U pip --trusted-host pypi.python.org pypi.org files.pythonhosted.org
-CALL pip install wheel --trusted-host pypi.python.org pypi.org files.pythonhosted.org
+CALL python -m pip install -U pip --trusted-host "pypi.python.org pypi.org files.pythonhosted.org"
+CALL pip install wheel --trusted-host "pypi.python.org pypi.org files.pythonhosted.org"
 
 REM Check that we have the expected version and architecture for Python
 CALL python --version
@@ -77,7 +77,7 @@ cd python
 
 REM sed -i 's/\ extra_compile_args\ =\ \[\]/\ extra_compile_args\ =\ \[\'\/MT\'\]/g' setup.py
 
-CALL python -m pip install setuptools==49.2.0 wheel==0.34.2 --trusted-host pypi.python.org pypi.org files.pythonhosted.org
+CALL python -m pip install setuptools==49.2.0 wheel==0.34.2 --trusted-host "pypi.python.org pypi.org files.pythonhosted.org"
 CALL python setup.py bdist_wheel --cpp_implementation --compile_static_extension
 dir dist
 copy dist\* %ARTIFACT_DIR%
