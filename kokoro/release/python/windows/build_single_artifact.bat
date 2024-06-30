@@ -30,6 +30,7 @@ REM the parent CMD process).
 SET PATH=%PYTHON%;%PYTHON%\Scripts;%OLD_PATH%
 echo "DEBUGGINGGGG"
 echo %PATH%
+dir C:\
 dir "C:\Python35"
 dir "C:\Python35-x64"
 dir "C:\Python35\bin"
