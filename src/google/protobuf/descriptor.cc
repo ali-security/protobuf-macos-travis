@@ -1105,7 +1105,7 @@ inline void DescriptorPool::Tables::FindAllExtensions(
 
 bool DescriptorPool::Tables::AddSymbol(const std::string& full_name,
                                        Symbol symbol) {
-  if (InsertIfNotPresent(&symbols_by_name_, full_name, symbol)) {
+  if (InsertIfNotPresent(&symbols_by_name_, full_name.c_str(), symbol)) {
     symbols_after_checkpoint_.push_back(full_name.c_str());
     return true;
   } else {
@@ -1121,7 +1121,7 @@ bool FileDescriptorTables::AddAliasUnderParent(const void* parent,
 }
 
 bool DescriptorPool::Tables::AddFile(const FileDescriptor* file) {
-  if (InsertIfNotPresent(&files_by_name_, file->name(), file)) {
+  if (InsertIfNotPresent(&files_by_name_, file->name().c_str(), file)) {
     files_after_checkpoint_.push_back(file->name().c_str());
     return true;
   } else {
