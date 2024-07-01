@@ -26,6 +26,9 @@ mkdir artifacts
 export ARTIFACT_DIR=$(pwd)/artifacts
 
 git clone https://github.com/matthew-brett/multibuild.git
+pushd multibuild
+git checkout c2890dc8dc93f99b0eadd76f87aa181f6aea42da
+popd
 cp kokoro/release/python/linux/config.sh config.sh
 
 build_artifact_version() {
